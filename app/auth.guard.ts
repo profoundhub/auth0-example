@@ -6,17 +6,16 @@ import { Auth } from './services/auth.service';
 @Injectable() 
     export class AuthGuard implements CanActivate {
         constructor(private auth: Auth, private router: Router) {
-
-        }
-   
-        CanActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-            if(this.auth.authenticated) {
-                console.log('AUTH GUARD PASSED');
+        }   
+        canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+            if(this.auth.authenticated()) {
+                // console.log('AUTH GUARD PASSED');
                 return true;
             } else {
-                console.log('BLOCKED BY AUTH GUARD');
+                // console.log('BLOCKED BY AUTH GUARD');
+                this.router.navigate(['/']);
+                return false;
             }
-        }
-    
+        }    
     }    
     
