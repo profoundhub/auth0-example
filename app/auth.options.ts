@@ -8,6 +8,7 @@ export const options = {
         sso: true
     },
     additionalSignUpFields: [{
+      /*
         name: "address",
         placeholder: "enter your address",        
         prefill: "Your address",
@@ -18,7 +19,7 @@ export const options = {
           };
         }
       },
-      {
+      {*/
         name: "github_handle",
         placeholder: "Enter your GitHub Handle"
       }],
